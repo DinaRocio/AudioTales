@@ -1,7 +1,6 @@
 "use client";
 
 import { isToday, parseISO, format } from "date-fns";
-import Image from "next/image";
 import { useState } from "react";
 
 const tales = [
@@ -32,9 +31,9 @@ export default function Home() {
 
   const recentlyPublishedTales = tales
     .filter((cuento) => new Date(cuento.publishDate) <= today)
-    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
-  const [currentAudio, setCurrentAudio] = useState(null);
+  const [currentAudio, setCurrentAudio] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-200 via-indigo-300 to-purple-300 flex flex-col items-center justify-center px-4">
@@ -66,7 +65,7 @@ export default function Home() {
           </div>
         ) : (
           <p className="text-gray-700">
-            No hay cuentos disponibles hoy. ¡Vuelve pronto!
+            {/* No hay cuentos disponibles hoy. ¡Vuelve pronto! */}
           </p>
         )}
       </div>
