@@ -1,0 +1,58 @@
+/* Reset para evitar márgenes y paddings inesperados */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos generales */
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+/* Contenedor flex */
+.parent {
+  display: flex;
+  flex-wrap: wrap; /* Necesario para que align-content tenga efecto */
+  justify-content: space-between; /* Distribuye en el eje principal (horizontal) */
+  align-items: center; /* Alinea los ítems en el eje transversal (vertical) */
+  align-content: space-around; /* Alinea las líneas de ítems (si hay varias filas) en el eje transversal */
+
+  width: 400px;
+  height: 300px;
+  border: 3px dashed #444;
+  padding: 10px;
+  background-color: #e0f7fa;
+  gap: 10px;
+}
+
+/* Ítems dentro del contenedor */
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #00796b;
+  color: white;
+  /* font-size: 2rem; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  border-radius: 8px;
+}
+
+.item:first-child {
+  background-color: #00796b;
+  height: 30px;
+}
+.item:nth-child(2) {
+  background-color: #cf11d2;
+  height: 45px;
+}
+.item:last-child {
+  background-color: #d6ba17;
+  height: 60px;
+}

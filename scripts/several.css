@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Necesario para que align-content tenga efecto */
+  gap: 10px;
+  width: 320px;
+  height: 200px;
+  border: 3px dashed #333;
+  background: #e0f7fa;
+  padding: 10px;
+}
+
+/* Caso 1: align-items (afecta a los ítems dentro de cada fila) */
+.align-items {
+  align-items: center; /* Centra verticalmente cada ítem */
+  justify-content: flex-start; /* Para que no se confunda con align-content */
+}
+
+/* Caso 2: align-content (afecta a las filas enteras dentro del contenedor) */
+.align-content {
+  align-content: space-around; /* Distribuye las filas entre sí */
+  align-items: stretch; /* No queremos que intervenga en la altura */
+  justify-content: flex-start;
+}
+
+/* Ítems */
+.item {
+  flex: 0 0 90px;
+  height: 60px;
+  background: #00796b;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
