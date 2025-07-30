@@ -1,0 +1,107 @@
+/* ------------------------------
+   1. Variables y sistema de diseño
+--------------------------------- */
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-slate-300: hsl(212, 45%, 89%);
+  --clr-slate-500: hsl(216, 15%, 48%);
+  --clr-slate-900: hsl(218, 44%, 22%);
+
+  --font-family-base: "Outfit", sans-serif;
+  --font-size-body: 0.9375rem; /* 15px */
+  --font-size-heading: 1.25rem; /* 20px */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --border-radius: 1.25rem;
+  --gap: 1rem;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------
+   2. Reset básico y estilos globales
+--------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  background-color: var(--clr-slate-300);
+  color: var(--clr-slate-500);
+
+  /* Flexbox para centrar todo el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* ------------------------------
+   3. Componente principal: tarjeta QR
+--------------------------------- */
+.card {
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  max-width: 320px;
+  width: 100%;
+  padding: var(--gap);
+
+  /* Flexbox interno para distribuir elementos */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: center;
+}
+
+/* ------------------------------
+   4. Imagen del código QR
+--------------------------------- */
+.card img {
+  width: 100%;
+  border-radius: 0.75rem;
+  display: block; /* elimina espacio blanco debajo */
+}
+
+/* ------------------------------
+   5. Título principal
+--------------------------------- */
+.card h1 {
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--clr-slate-900);
+}
+
+/* ------------------------------
+   6. Texto descriptivo
+--------------------------------- */
+.card p {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--clr-slate-500);
+  padding: 0 0.5rem;
+}
+
+/* ------------------------------
+   7. Footer con créditos (opcional)
+--------------------------------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--clr-slate-500);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
